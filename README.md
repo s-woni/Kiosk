@@ -33,6 +33,6 @@ Java를 사용하여 키오스크를 구현
 
 - UML
 
-![level1-uml]()
+![lv1-uml.png](src/image/lv1-uml.png)
 
 ### Lv 2. 
