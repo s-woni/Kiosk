@@ -14,6 +14,6 @@ public class Main {
         System.out.println("2. Caffe Latte          | $ 5.0 | 풍부하고 진한 에스프레소에 신선산 스팀 밀크가 더해진 커피");
         System.out.println("3. Cappuccino           | $ 5.0 | 우유 거품이 풍부한 부드러운 커피");
         System.out.println("4. Caramel Macchiato    | $ 5.5 | 달콤한 카라멜과 에스프레소가 어우러진 커피");
-
+        System.out.println("0. Exit                 | 종료");
     }
 }
