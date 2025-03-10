@@ -11,7 +11,7 @@ public class MenuItem {
         this.menuDescription = menuDescription;
     }
 
-    public void printMenuList(int number) {
+    public void printMenu(int number) {
         System.out.printf("%d. %-20s | $ %.1f | %s\n", number, this.menuName, this.menuPrice, this.menuDescription);
     }
 }

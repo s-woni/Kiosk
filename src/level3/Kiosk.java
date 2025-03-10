@@ -15,7 +15,7 @@ public class Kiosk {
         Scanner scanner = new Scanner(System.in);
 
         while(true) {
-            printMenu();
+            printMenuList();
 
             try {
                 int order = scanner.nextInt();
@@ -37,13 +37,13 @@ public class Kiosk {
         }
     }
 
-    public void printMenu() {
+    public void printMenuList() {
         System.out.println();
         System.out.println("                                [ STARBUCKS MENU ]");
         System.out.println("--------------------------------------------------------------------------------------");
         int tempNum = 1;
         for (MenuItem item : menuItems) {
-            item.printMenuList(tempNum);
+            item.printMenu(tempNum);
             tempNum++;
         }
         System.out.println("0. Exit                 | 종료");
