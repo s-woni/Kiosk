@@ -20,24 +20,12 @@ public class Kiosk {
             try {
                 int order = scanner.nextInt();
 
-                if (order < 0) { // getValidNumber()
-                    throw new IllegalArgumentException("\n음수를 입력하셨습니다.\n양수를 입력해주세요.");
-                } else if (order >= menuItems.size()) {
-                    throw new IllegalArgumentException("\n없는 메뉴입니다.\n메뉴에 있는 번호를 골라주세요.");
-                }
-
-                if (order == 0) {
-                    System.out.println("\n주문을 종료합니다.\n감사합니다!\n");
-                    scanner.close();
+                if (closeKiosk(order)) {
                     return;
                 }
+                validateNumber(order);
+                printOrder(order);
 
-                switch (order) { // getOrder()
-                    case 1 -> System.out.println("\nAmericano를 주문하셨습니다.\n가격은 $ 4.5 입니다.");
-                    case 2 -> System.out.println("\nCaffe Latte를 주문하셨습니다.\n가격은 $ 5.0 입니다.");
-                    case 3 -> System.out.println("\nCappuccino를 주문하셨습니다.\n가격은 $ 5.0 입니다.");
-                    case 4 -> System.out.println("\nCaramel Macchiato를 주문하셨습니다.\n가격은 $ 5.5 입니다.");
-                }
             } catch (InputMismatchException e) {
                 System.out.println();
                 System.out.println("잘못된 입력입니다.");
@@ -61,5 +49,27 @@ public class Kiosk {
         System.out.println("0. Exit                 | 종료");
         System.out.println("--------------------------------------------------------------------------------------");
         System.out.print("메뉴를 선택해주세요 : ");
+    }
+
+    public void printOrder(int order) {
+        MenuItem selectedItem = menuItems.get(order - 1);
+
+        System.out.println("\n" + selectedItem.menuName + "를 주문하셨습니다.\n가격은 $ " + selectedItem.menuPrice + "입니다.");
+    }
+
+    public void validateNumber(int order) {
+        if (order < 0) {
+            throw new IllegalArgumentException("\n음수를 입력하셨습니다.\n양수를 입력해주세요.");
+        } else if (order >= menuItems.size() + 1) {
+            throw new IllegalArgumentException("\n없는 메뉴입니다.\n메뉴에 있는 번호를 골라주세요.");
+        }
+    }
+
+    public boolean closeKiosk(int order) {
+        if (order == 0) {
+            System.out.println("\n주문을 종료합니다.\n감사합니다!\n");
+            return true;
+        }
+        return false;
     }
 }
