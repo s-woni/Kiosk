@@ -35,4 +35,22 @@ Java를 사용하여 키오스크를 구현
 
 ![lv1-uml.png](src/image/lv1-uml.png)
 
-### Lv 2. 
+### Lv 2. 객체 지향 설계를 적용해 햄버거 메뉴를 클래스로 관리하기
+
+1. **MenuItem** 클래스 생성
+   - 메뉴의 이름, 가격, 설명 필드를 가짐
+   - 설명 : 개별 음식 항목을 관리하는 클래스, 현재는 햄버거만 관리
+
+2. **MenuItem** 클래스를 활용하여 메뉴 출력
+   - MenuItem 객체 생성을 통해 이름, 가격, 설명을 세팅
+   - List 를 선언하여 여러 MenuItem 추가
+   - 반복문을 활용해 menuItems를 탐색하면서 하나씩 접근
+
+- 구조
+
+```text
+/Kiosk
+    └── level2
+            ├── Main.java
+            └── MenuItem.java
+```
