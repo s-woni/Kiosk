@@ -60,7 +60,7 @@ public class Kiosk {
     public void validateNumber(int order) {
         if (order < 0) {
             throw new IllegalArgumentException("\n음수를 입력하셨습니다.\n양수를 입력해주세요.");
-        } else if (order >= menuItems.size() + 1) {
+        } else if (order > menuItems.size()) {
             throw new IllegalArgumentException("\n없는 메뉴입니다.\n메뉴에 있는 번호를 골라주세요.");
         }
     }
