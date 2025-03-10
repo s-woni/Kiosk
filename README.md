@@ -62,3 +62,11 @@ Java를 사용하여 키오스크를 구현
    - `MenuItem`을 관리하는 리스트가 필드로 존재
    - `main`함수에서 관리하던 입력과 반복문 로직은 이제 `start`함수를 만들어 관리
    - `List<MenuItem> menuItems`는 `Kiosk` 클래스 생성자를 통해 값을 할당
+
+```text
+/Kiosk
+    └── level3
+            ├── Main.java
+            ├── MenuItem.java
+            └── Kiosk.java
+```
