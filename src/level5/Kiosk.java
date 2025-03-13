@@ -25,7 +25,6 @@ public class Kiosk {
                     printMenuList(categoryNum);
 
                     try {
-                        System.out.print("order : ");
                         int order = scanner.nextInt();
 
                         if (order == 9) {
