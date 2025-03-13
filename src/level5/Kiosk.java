@@ -20,7 +20,7 @@ public class Kiosk {
             try {
                 int categoryNum = scanner.nextInt();
 
-                validateNumber(categoryNum);
+                getCategoryNumber(categoryNum);
                 while(true) {
                     printMenuList(categoryNum);
 
@@ -31,7 +31,7 @@ public class Kiosk {
                         if (order == 9) {
                             break;
                         }
-                        validateOrderNumber(categoryNum, order);
+                        getOrderNumber(categoryNum, order);
                         printOrder(categoryNum, order);
                     } catch (InputMismatchException e) {
                         System.out.println();
@@ -91,24 +91,21 @@ public class Kiosk {
         System.out.println("\n" + selectedItem.getMenuName() + "를 주문하셨습니다.\n가격은 $ " + selectedItem.getMenuPrice() + "입니다.");
     }
 
-    public void validateNumber(int categoryNum) {
-        if (closeKiosk(categoryNum)) {
-            System.exit(0);
-        } else if (categoryNum < 0) {
-            throw new IllegalArgumentException("\n음수를 입력하셨습니다.\n양수를 입력해주세요.");
-        } else if (categoryNum >= menus.size() + 1) {
-            throw new IllegalArgumentException("\n없는 메뉴입니다.\n메뉴에 있는 번호를 골라주세요.");
-        }
+    public void getCategoryNumber(int categoryNum) {
+        validateNumber(categoryNum, menus.size());
     }
 
-    public void validateOrderNumber(int categoryNum, int order) {
+    public void getOrderNumber(int categoryNum, int order) {
         Menu selectedMenu = menus.get(categoryNum - 1);
+        validateNumber(order, selectedMenu.getMenuItems().size());
+    }
 
-        if (closeKiosk(order)) {
+    public void validateNumber(int number, int maxSize) {
+        if (closeKiosk(number)) {
             System.exit(0);
-        } else if (order < 0) {
+        } else if (number < 0) {
             throw new IllegalArgumentException("\n음수를 입력하셨습니다.\n양수를 입력해주세요.");
-        } else if (order > selectedMenu.getMenuItems().size()) {
+        } else if (number > maxSize) {
             throw new IllegalArgumentException("\n없는 메뉴입니다.\n메뉴에 있는 번호를 골라주세요.");
         }
     }
