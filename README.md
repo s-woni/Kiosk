@@ -81,7 +81,7 @@ Java를 사용하여 키오스크를 구현
 
 ```text
 /Kiosk
-    └── level3
+    └── level4
             ├── Main.java
             ├── MenuItem.java
             ├── Kiosk.java
@@ -93,3 +93,37 @@ Java를 사용하여 키오스크를 구현
 1. **MenuItem, Menu 그리고 Kiosk 클래스의 필드에 직접 접근하지 못하도록 설정합니다.**
 
 2. **Getter & Setter 메서드를 사용해 데이터를 관리**
+
+```text
+/Kiosk
+    └── level5
+            ├── Main.java
+            ├── MenuItem.java
+            ├── Kiosk.java
+            └── Menu.java
+```
+
+### 도전 Lv 1 (Lv 6). 장바구니 및 구매하기 기능을 추가하기
+
+1. **장바구니 생성 및 관리 기능**
+   - 사용자가 선택한 메뉴 추가
+   - 메뉴 정보 저장
+
+2. **장바구니 출력 및 금액 계산**
+   - 결제 전 장바구니에 담긴 모든 메뉴 & 가격 출력
+
+3. **장바구니 담기 기능**
+   - 메뉴를 클릭하면 장바구니에 추가할지 여부 확인
+
+4. **주문 기능**
+   - 장바구니에 담긴 모든 항목을 출력
+   - 금액 계산 및 주문하기를 누르면 장바구니 초기화
+
+```text
+/Kiosk
+    └── level6
+            ├── Main.java
+            ├── MenuItem.java
+            ├── Kiosk.java
+            └── Menu.java
+```
