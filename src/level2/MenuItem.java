@@ -13,7 +13,7 @@ public class MenuItem {
         this.menuDescription = menuDescription;
     }
 
-    // 메뉴 정보를 출력
+    // 메뉴 정보를 출력 메서드
     public void printMenu(int number) {
         System.out.printf("%d. %-20s | $ %.1f | %s\n", number, this.menuName, this.menuPrice, this.menuDescription);
     }
